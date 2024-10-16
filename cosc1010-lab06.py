@@ -113,8 +113,8 @@ for lett, count in lett_count.items():
 print("*"*75)
 # Output which letter occurred the most 
 
-most_occurred = max(lett_count.values())
-least_occurred = min(lett_count.values())
+most_occurred = max(lett_count, key=lett_count.get)
+least_occurred = min(lett_count, key=lett_count.get)
 
 print(f"The letter that occurred the most is {most_occurred}")
 print("*"*75)
