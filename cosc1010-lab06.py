@@ -1,9 +1,9 @@
-# Your Name Here
+# Jackie Hall
 # UWYO COSC 1010
-# Submission Date
+# Submission Date: 10/16/2024
 # Lab 06
-# Lab Section: 
-# Sources, people worked with, help given to: 
+# Lab Section:15
+# Sources, people worked with, help given to: Lee Huber 
 # your
 # comments
 # here
@@ -71,6 +71,31 @@ print(len(random_string)) # Print out the size for reference
 # Output which letter occurred the least 
 # Output what the percentage of the string each character is, again in alphabetical
 
+lett_count = {}
+lett_list = []
+tea = 0
+teak = 0
+
+for lett in random_string:
+    lett_list.append(lett)
+
+lett_list.sort()
+
+for lett in lett_list:
+    tea += 1 
+    lett_count[lett] = tea
+    if lett_list[teak-1] != lett:
+        tea = 1
+    teak += 1
+
+
+print(lett_count)
+
+tot = 2500
+
+for lett, count in lett_count.items():
+    perc = (count / tot) * 100
+    print(f"'{lett}' takes up {perc}% of the list")
 #Tips and trick:
 # You can iterate through strings like you would a list
 # All characters are lowercase 
@@ -88,8 +113,8 @@ print(len(random_string)) # Print out the size for reference
 print("*"*75)
 # Output which letter occurred the most 
 
-most_occurred = ""
-least_occurred = ""
+most_occurred = max(lett_count.values())
+least_occurred = min(lett_count.values())
 
 print(f"The letter that occurred the most is {most_occurred}")
 print("*"*75)
